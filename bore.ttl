@@ -1,0 +1,37 @@
+PREFIX bore: <https://linked.data.gov.au/def/bore/>
+PREFIX ont: <https://linked.data.gov.au/def/bore>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ont:
+    a owl:Ontology ;
+    owl:versionIRI bore:1.0 ;
+    owl:versionInfo "1.0 - Initial version" ;
+    schema:codeRepository <https://github.com/kurrawong/bore-model> ;
+    schema:creator <https://orcid.org/0000-0002-3884-3420> ;
+    schema:dateCreated "2020-11-11"^^xsd:date ;
+    schema:dateModified "2020-11-11"^^xsd:date ;
+    schema:description "A model that describes physical, functional and operational aspects of Bores, sometimes known as Wells." ;
+    schema:name "Bore Model" ;
+    schema:publisher <https://linked.data.gov.au/org/gswa> ;
+.
+
+<https://kurrawong.ai>
+    a schema:Organization ;
+    schema:name "KurrawongAI" ;
+    schema:url "https://kurrawong.ai" ;
+.
+
+<https://linked.data.gov.au/org/gswa>
+    a schema:Organization ;
+    schema:name "Geological Survey of Western Australia" ;
+    schema:url "https://www.dmp.wa.gov.au/Geological-Survey/Geological-Survey-262.aspx" ;
+.
+
+<https://orcid.org/0000-0002-3884-3420>
+    a schema:Person ;
+    schema:affiliation <https://kurrawong.ai> ;
+    schema:email "nick@kurrawong.ai" ;
+    schema:name "Nicholas J. Car" ;
+.

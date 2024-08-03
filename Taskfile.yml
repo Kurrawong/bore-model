@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  html:
+    cmds:
+      - python scripts/make_html.py
+    silent: true
+  tidy:
+    cmds:
+      - python scripts/reformat_ttl.py bore.ttl
+    silent: true
+  tests:
+    desc: Run pytest tests
+    cmds:
+      - poetry run pytest --disable-warnings

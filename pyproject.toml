@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bore-model"
+version = "0.1.0"
+description = "A model that describes physical, functional and operational aspects of Bores, sometimes known as Wells."
+authors = ["Nicholas Car <nick@kurrawong.net>"]
+license = "Creative Commons BY 4.0"
+readme = "README.md"
+packages = [{include = "bore_model"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pylode = "^3.2.0"
+pyshacl = "^0.26.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+black = "^24.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
