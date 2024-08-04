@@ -283,6 +283,24 @@ td {
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://orcid.org/0000-0002-3884-3420",
+    "https://schema.org/affiliation": [
+      {
+        "@id": "https://kurrawong.ai"
+      }
+    ],
+    "https://schema.org/email": [
+      {
+        "@value": "nick@kurrawong.ai"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Nicholas J. Car"
+      }
+    ]
+  },
+  {
     "@id": "https://linked.data.gov.au/def/bore",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -305,24 +323,6 @@ td {
     "https://schema.org/publisher": [
       {
         "@id": "https://linked.data.gov.au/org/gswa"
-      }
-    ]
-  },
-  {
-    "@id": "https://orcid.org/0000-0002-3884-3420",
-    "https://schema.org/affiliation": [
-      {
-        "@id": "https://kurrawong.ai"
-      }
-    ],
-    "https://schema.org/email": [
-      {
-        "@value": "nick@kurrawong.ai"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Nicholas J. Car"
       }
     ]
   },
@@ -622,6 +622,24 @@ td {
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://orcid.org/0000-0002-3884-3420",
+    "https://schema.org/affiliation": [
+      {
+        "@id": "https://kurrawong.ai"
+      }
+    ],
+    "https://schema.org/email": [
+      {
+        "@value": "nick@kurrawong.ai"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Nicholas J. Car"
+      }
+    ]
+  },
+  {
     "@id": "https://linked.data.gov.au/def/bore",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -644,24 +662,6 @@ td {
     "https://schema.org/publisher": [
       {
         "@id": "https://linked.data.gov.au/org/gswa"
-      }
-    ]
-  },
-  {
-    "@id": "https://orcid.org/0000-0002-3884-3420",
-    "https://schema.org/affiliation": [
-      {
-        "@id": "https://kurrawong.ai"
-      }
-    ],
-    "https://schema.org/email": [
-      {
-        "@value": "nick@kurrawong.ai"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Nicholas J. Car"
       }
     ]
   },
@@ -771,6 +771,192 @@ td {
           </div>
         </dl>
       </div>
+      <div class="section" id="classes">
+        <h2>Classes</h2>
+        <div class="property entity" id="Bore">
+          <h3>Bore
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://linked.data.gov.au/def/bore/Bore</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A bore is one or more boreholes which are narrow shafts, bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, other liquids (such as petroleum) or gases (such as natural gas), as part of a geotechnical investigation, environmental site assessment, mineral exploration, temperature measurement, as a pilot hole for installing piers or underground utilities, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Expected predicates for this class are: has origin position, has part - for linking to Borehole objects), was attributed to - for linking to Agent objects, via Attribution objects, classification predicates, e.g. has purpose</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:b-01
+    a bore:Bore ;
+    bore:hadDrillingMethod &lt;https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-jet&gt; ;
+    bore:hasOriginPosition [
+        geo:asWKT &quot;POINT (153.083340 -27.325458)&quot;^^geo:wktLiteral ;
+    ] ;
+    bore:hasOriginSetting bsps:natural-ground-surface ;
+    prov:wasAttributedTo [
+        prov:agent &lt;https://orcid.org/0000-0002-8742-7730&gt; ;
+        dcat:hadRole ex:driller ;
+    ] ;
+    bore:hasPurpose &lt;https://linked.data.gov.au/def/borehole-purpose/oil-shale&gt; ;
+    bore:hasStatus &lt;https://linked.data.gov.au/def/borehole-status/operational&gt; ;
+    hasVerticalReference &lt;https://linked.data.gov.au/def/vertical-depth-reference-systems/lat&gt; ;
+    # other predicates such as links to Bores
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Borehole">
+          <h3>Borehole
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://linked.data.gov.au/def/bore/Borehole</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A borehole is a narrow shaft, bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, other liquids (such as petroleum) or gases (such as natural gas), as part of a geotechnical investigation, environmental site assessment, mineral exploration, temperature measurement, as a pilot hole for installing piers or underground utilities, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>A Borehole is not the overall Bore or Well object but a distinct part of it. Every Borehole must be presented in relation to a Bore.</p>
+<p>Expected predicates for this class are: has geometry - used to indicate the geometry of the Borehole, perhaps as a LineString or a Polygon, has part - for linking to Borehole Interval objects)</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:b-01
+    a bore:Bore ;
+    schema:hasPart
+        ex:bh-01 ,
+        ex:bh-02 ;
+.
+
+ex:bh-01
+    a bore:Borehole ;
+    geo:hasGeometry [
+        geo:asWKT &quot;LINESTRING (...)&quot;^^geo:wktLiteral
+    ] ;
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="BoreholeInterval">
+          <h3>Borehole Interval
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://linked.data.gov.au/def/bore/BoreholeInterval</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A segment of a Borehole, usually started and terminated by changes in direction or of the material drilled</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:bh-01
+    a bore:Borehole ;
+    schema:hasPart
+        ex:bhi-01 ,
+        ex:bhi-02 ,
+        ex:bhi-03 ;
+.
+
+ex:bhi-01
+    a bore:BoreholeInterval ;
+    geo:hasGeometry [
+        geo:asWKT &quot;LINESTRING (...)&quot;^^geo:wktLiteral
+    ] ;
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="QuantitativeValue">
+          <h3>Quantitative Value
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://schema.org/QuantitativeValue</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A point value or interval for product characteristics and other purposes</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Use this class to communicate a number with a value and a unit of measure. Use in this model requires schema:value and schema:unitCode values with the latter indicating units from QUDT</p>
+<p>Expected predicates for this class are: value - to indicate the number/other kind of value, unitCode - to indicate an IRI of a unit of measure especially from a well-known source of UoMs such as QUDT (https://qudt.org).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:b-01
+    a bore:Bore ;
+    schema:depth [
+        a schema:QuantitativeValue
+        schema:value 239 ;
+        schema:unitCode unit:M ;
+    ] ;
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
       <div id="namespaces">
         <h2>Namespaces</h2>
         <dl>
@@ -786,23 +972,34 @@ td {
           <dd>
             <code>http://www.w3.org/2002/07/owl#</code>
           </dd>
-          <dt id="prov">prov</dt>
-          <dd>
-            <code>http://www.w3.org/ns/prov#</code>
-          </dd>
           <dt id="rdf">rdf</dt>
           <dd>
             <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
           </dd>
           <dt id="schema">schema</dt>
           <dd>
             <code>https://schema.org/</code>
           </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
         </dl>
       </div>
       <div id="legend">
         <h2>Legend</h2>
-        <table class="entity"></table>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
+        </table>
       </div>
       <div class="section" id="metadata">
         <h1>Bore Model</h1>
@@ -892,6 +1089,192 @@ td {
           </div>
         </dl>
       </div>
+      <div class="section" id="classes">
+        <h2>Classes</h2>
+        <div class="property entity" id="Bore">
+          <h3>Bore
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://linked.data.gov.au/def/bore/Bore</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A bore is one or more boreholes which are narrow shafts, bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, other liquids (such as petroleum) or gases (such as natural gas), as part of a geotechnical investigation, environmental site assessment, mineral exploration, temperature measurement, as a pilot hole for installing piers or underground utilities, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Expected predicates for this class are: has origin position, has part - for linking to Borehole objects), was attributed to - for linking to Agent objects, via Attribution objects, classification predicates, e.g. has purpose</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:b-01
+    a bore:Bore ;
+    bore:hadDrillingMethod &lt;https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-jet&gt; ;
+    bore:hasOriginPosition [
+        geo:asWKT &quot;POINT (153.083340 -27.325458)&quot;^^geo:wktLiteral ;
+    ] ;
+    bore:hasOriginSetting bsps:natural-ground-surface ;
+    prov:wasAttributedTo [
+        prov:agent &lt;https://orcid.org/0000-0002-8742-7730&gt; ;
+        dcat:hadRole ex:driller ;
+    ] ;
+    bore:hasPurpose &lt;https://linked.data.gov.au/def/borehole-purpose/oil-shale&gt; ;
+    bore:hasStatus &lt;https://linked.data.gov.au/def/borehole-status/operational&gt; ;
+    hasVerticalReference &lt;https://linked.data.gov.au/def/vertical-depth-reference-systems/lat&gt; ;
+    # other predicates such as links to Bores
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Borehole">
+          <h3>Borehole
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://linked.data.gov.au/def/bore/Borehole</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A borehole is a narrow shaft, bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, other liquids (such as petroleum) or gases (such as natural gas), as part of a geotechnical investigation, environmental site assessment, mineral exploration, temperature measurement, as a pilot hole for installing piers or underground utilities, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>A Borehole is not the overall Bore or Well object but a distinct part of it. Every Borehole must be presented in relation to a Bore.</p>
+<p>Expected predicates for this class are: has geometry - used to indicate the geometry of the Borehole, perhaps as a LineString or a Polygon, has part - for linking to Borehole Interval objects)</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:b-01
+    a bore:Bore ;
+    schema:hasPart
+        ex:bh-01 ,
+        ex:bh-02 ;
+.
+
+ex:bh-01
+    a bore:Borehole ;
+    geo:hasGeometry [
+        geo:asWKT &quot;LINESTRING (...)&quot;^^geo:wktLiteral
+    ] ;
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="BoreholeInterval">
+          <h3>Borehole Interval
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://linked.data.gov.au/def/bore/BoreholeInterval</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A segment of a Borehole, usually started and terminated by changes in direction or of the material drilled</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:bh-01
+    a bore:Borehole ;
+    schema:hasPart
+        ex:bhi-01 ,
+        ex:bhi-02 ,
+        ex:bhi-03 ;
+.
+
+ex:bhi-01
+    a bore:BoreholeInterval ;
+    geo:hasGeometry [
+        geo:asWKT &quot;LINESTRING (...)&quot;^^geo:wktLiteral
+    ] ;
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="QuantitativeValue">
+          <h3>Quantitative Value
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://schema.org/QuantitativeValue</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A point value or interval for product characteristics and other purposes</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Use this class to communicate a number with a value and a unit of measure. Use in this model requires schema:value and schema:unitCode values with the latter indicating units from QUDT</p>
+<p>Expected predicates for this class are: value - to indicate the number/other kind of value, unitCode - to indicate an IRI of a unit of measure especially from a well-known source of UoMs such as QUDT (https://qudt.org).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>
+ex:b-01
+    a bore:Bore ;
+    schema:depth [
+        a schema:QuantitativeValue
+        schema:value 239 ;
+        schema:unitCode unit:M ;
+    ] ;
+.
+</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
       <div id="namespaces">
         <h2>Namespaces</h2>
         <dl>
@@ -907,23 +1290,34 @@ td {
           <dd>
             <code>http://www.w3.org/2002/07/owl#</code>
           </dd>
-          <dt id="prov">prov</dt>
-          <dd>
-            <code>http://www.w3.org/ns/prov#</code>
-          </dd>
           <dt id="rdf">rdf</dt>
           <dd>
             <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
           </dd>
           <dt id="schema">schema</dt>
           <dd>
             <code>https://schema.org/</code>
           </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
         </dl>
       </div>
       <div id="legend">
         <h2>Legend</h2>
-        <table class="entity"></table>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
+        </table>
       </div>
     </div>
     <div id="pylode">
@@ -949,6 +1343,25 @@ td {
         </li>
         <li>
           <h4>
+            <a href="#classes">Classes</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#Bore">Bore</a>
+            </li>
+            <li>
+              <a href="#Borehole">Borehole</a>
+            </li>
+            <li>
+              <a href="#BoreholeInterval">Borehole Interval</a>
+            </li>
+            <li>
+              <a href="#QuantitativeValue">Quantitative Value</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
             <a href="#namespaces">Namespaces</a>
           </h4>
           <ul class="second">
@@ -962,13 +1375,16 @@ td {
               <a href="#owl">owl</a>
             </li>
             <li>
-              <a href="#prov">prov</a>
-            </li>
-            <li>
               <a href="#rdf">rdf</a>
             </li>
             <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
               <a href="#schema">schema</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
             </li>
           </ul>
         </li>
@@ -1003,6 +1419,37 @@ td {
         </li>
         <li>
           <h4>
+            <a href="#classes">Classes</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#Bore">Bore</a>
+            </li>
+            <li>
+              <a href="#Borehole">Borehole</a>
+            </li>
+            <li>
+              <a href="#BoreholeInterval">Borehole Interval</a>
+            </li>
+            <li>
+              <a href="#QuantitativeValue">Quantitative Value</a>
+            </li>
+            <li>
+              <a href="#Bore">Bore</a>
+            </li>
+            <li>
+              <a href="#Borehole">Borehole</a>
+            </li>
+            <li>
+              <a href="#BoreholeInterval">Borehole Interval</a>
+            </li>
+            <li>
+              <a href="#QuantitativeValue">Quantitative Value</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
             <a href="#namespaces">Namespaces</a>
           </h4>
           <ul class="second">
@@ -1016,13 +1463,16 @@ td {
               <a href="#owl">owl</a>
             </li>
             <li>
-              <a href="#prov">prov</a>
-            </li>
-            <li>
               <a href="#rdf">rdf</a>
             </li>
             <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
               <a href="#schema">schema</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
             </li>
             <li>
               <a href="#bore">bore</a>
@@ -1034,13 +1484,16 @@ td {
               <a href="#owl">owl</a>
             </li>
             <li>
-              <a href="#prov">prov</a>
-            </li>
-            <li>
               <a href="#rdf">rdf</a>
             </li>
             <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
               <a href="#schema">schema</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
             </li>
           </ul>
         </li>

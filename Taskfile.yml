@@ -2,14 +2,23 @@ version: '3'
 
 tasks:
   html:
+    desc: Regenerate bore.html
+    deps: [tidy, tests, readme]
     cmds:
       - python scripts/make_html.py
-    silent: true
+      - echo "HTML remade"
+  readme:
+    desc: Regenerate README.md
+    cmds:
+      - python scripts/make_readme.py
+      - echo "README remade"
   tidy:
+    desc: Reformat the bore.ttl file
     cmds:
       - python scripts/reformat_ttl.py bore.ttl
-    silent: true
+      - echo "RDF tidied"
   tests:
     desc: Run pytest tests
     cmds:
       - poetry run pytest --disable-warnings
+      - echo "Python tests run"
