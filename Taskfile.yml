@@ -1,9 +1,13 @@
 version: '3'
 
 tasks:
+  all:
+    desc: Regenerate bore.html
+    deps: [tidy, tests, readme, html]
+    cmds:
+      - echo "all tasks done"
   html:
     desc: Regenerate bore.html
-    deps: [tidy, tests, readme]
     cmds:
       - python scripts/make_html.py
       - echo "HTML remade"
