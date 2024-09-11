@@ -19,10 +19,11 @@ jobs:
       working-directory: ./
       run: |
         mkdir doc
+        mkdir doc/img
         cp README.md doc/
         cp model.html doc/
         cp model.ttl doc/
-        cp -p img/Overview.png doc/
+        cp img/Overview.png doc/img/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
