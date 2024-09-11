@@ -1,0 +1,252 @@
+PREFIX bore: <https://linked.data.gov.au/def/bore/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ont: <https://linked.data.gov.au/def/bore>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ont:
+    a owl:Ontology ;
+    owl:versionIRI bore:1.0 ;
+    owl:versionInfo "1.0 - Initial version" ;
+    schema:codeRepository <https://github.com/kurrawong/bore-model> ;
+    schema:creator <https://orcid.org/0000-0002-3884-3420> ;
+    schema:dateCreated "2020-11-11"^^xsd:date ;
+    schema:dateModified "2020-11-11"^^xsd:date ;
+    schema:description "A model that describes physical, functional and operational aspects of Bores, sometimes known as Wells." ;
+    schema:name "Bore Model" ;
+    schema:primaryImageOfPage "overview.png" ;
+    schema:publisher <https://linked.data.gov.au/org/gswa> ;
+.
+
+bore:hadDrillingMethod
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range skos:Concept ;
+    skos:example "See example for bore:Bore" ;
+    schema:description "The method used to drill the Bore" ;
+    schema:name "had drilling method" ;
+.
+
+bore:hasInclination
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range
+        xsd:double ,
+        skos:Concept ;
+    skos:example """
+ex:b-01
+    a bore:Bore ;
+    bore:hasInclination 78 ;  # assumed to be in degrees from the vertical
+.
+
+ex:b-02
+    a bore:Bore ;
+    bore:hasInclination <https://linked.data.gov.au/def/borehole-design/inclineddown> ;  # from the Borehole Design vocab
+.
+""" ;
+    skos:scopeNote "The value must be between 0 and -90 or a concept from a vocabulary, such as Borehole Design" ;
+    schema:description "The angle in the vertical plane relative to a reference vector parallel to the force of gravity, i.e. downwards" ;
+    schema:name "has inclination" ;
+.
+
+bore:hasOriginPosition
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range geo:SpatialObject ;
+    skos:example "See example for bore:Bore" ;
+    skos:scopeNote "Indicate only geo:Feature or geo:Geometry class instances. If using geo:Geometry, only use Point geometries" ;
+    schema:description "The position of the start of the first Borehole of the Bore on a surface" ;
+    schema:name "has origin position" ;
+.
+
+bore:hasOriginSetting
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range skos:Concept ;
+    skos:example "See example for bore:Bore" ;
+    skos:historyNote "This predicate is the equivalent of GeoSciML's startPoint property" ;
+    skos:scopeNote "A Concept from the Borehole start point setting vocabulary" ;
+    schema:description "Indicates the nature of the bore origin surroundings" ;
+    schema:name "has origin setting" ;
+.
+
+bore:hasPurpose
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range skos:Concept ;
+    skos:example "See example for bore:Bore" ;
+    skos:scopeNote "A Concept from the Borehole Purpose vocabulary. Multiple purposes may be indicated" ;
+    schema:description "A purpose of the Bore" ;
+    schema:name "has purpose" ;
+.
+
+bore:hasStatus
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range skos:Concept ;
+    skos:example "See example for bore:Bore" ;
+    skos:scopeNote "A Concept from the Borehole Status vocabulary" ;
+    schema:description "The current state of a Bore within its lifecycle from proposed through operational through to abandoned" ;
+    schema:name "has status" ;
+.
+
+bore:hasVerticalReference
+    a rdf:Property ;
+    rdfs:domain bore:Bore ;
+    rdfs:range skos:Concept ;
+    skos:example "See example for bore:Bore" ;
+    skos:scopeNote "A skos:Concept from the Depth Reference vocabulary" ;
+    schema:description "The point or level from which heights and depths are measured and referenced to for an entity or activity" ;
+    schema:name "has vertical reference" ;
+.
+
+schema:QuantitativeValue
+    a owl:Class ;
+    skos:example """
+ex:b-01
+    a bore:Bore ;
+    schema:depth [
+        a schema:QuantitativeValue
+        schema:value 239 ;
+        schema:unitCode unit:M ;
+    ] ;
+.
+""" ;
+    skos:scopeNote """Use this class to communicate a number with a value and a unit of measure. Use in this model requires schema:value and schema:unitCode values with the latter indicating units from QUDT
+
+Expected predicates for this class are: value - to indicate the number/other kind of value, unitCode - to indicate an IRI of a unit of measure especially from a well-known source of UoMs such as QUDT (https://qudt.org).
+""" ;
+    schema:description "A point value or interval for product characteristics and other purposes" ;
+    schema:name "Quantitative Value" ;
+.
+
+schema:depth
+    a rdf:Property ;
+    skos:example """
+ex:b-01
+    a bore:Bore ;
+    schema:depth 431.2 ;  # assumed to be in metres
+.
+
+ex:b-02
+    a bore:Bore ;
+    schema:depth [  # 2.473 kM
+        schema:value 2.473 ;
+        schema:unitCode <https://qudt.org/vocab/unit/KiloM> ;
+    ] ;
+.
+""" ;
+    skos:scopeNote "Use this to give a simple value for the depth of the Bore element. Detailed depths should be made using geometries. If a simple double value is given, it is assumed to be depth in metres" ;
+    schema:description "The depth of the Bore element from the bore's origin position" ;
+    schema:domainIncludes
+        bore:Bore ,
+        bore:Borehole ,
+        bore:BoreholeInterval ;
+    schema:name "depth" ;
+    schema:rangeIncludes
+        xsd:double ,
+        schema:Number ;
+.
+
+<https://kurrawong.ai>
+    a schema:Organization ;
+    schema:name "KurrawongAI" ;
+    schema:url "https://kurrawong.ai" ;
+.
+
+bore:Borehole
+    a owl:Class ;
+    skos:example """
+ex:b-01
+    a bore:Bore ;
+    schema:hasPart
+        ex:bh-01 ,
+        ex:bh-02 ;
+.
+
+ex:bh-01
+    a bore:Borehole ;
+    geo:hasGeometry [
+        geo:asWKT "LINESTRING (...)"^^geo:wktLiteral
+    ] ;
+.
+""" ;
+    skos:historyNote "This definition for a Bore is derived from of GeoSciML's definition for Borehole, however it is altered to cater for multi-shaft Bores/Wells. This is achieved by making Bore a container class for one of more Borehole objects which represent the individual shafts." ;
+    skos:scopeNote """A Borehole is not the overall Bore or Well object but a distinct part of it. Every Borehole must be presented in relation to a Bore.
+
+Expected predicates for this class are: has geometry - used to indicate the geometry of the Borehole, perhaps as a LineString or a Polygon, has part - for linking to Borehole Interval objects)""" ;
+    schema:alternateName
+        "Drillhole" ,
+        "Wellbore" ;
+    schema:description "A borehole is a narrow shaft, bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, other liquids (such as petroleum) or gases (such as natural gas), as part of a geotechnical investigation, environmental site assessment, mineral exploration, temperature measurement, as a pilot hole for installing piers or underground utilities, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage." ;
+    schema:name "Borehole" ;
+.
+
+bore:BoreholeInterval
+    a owl:Class ;
+    skos:example """
+ex:bh-01
+    a bore:Borehole ;
+    schema:hasPart
+        ex:bhi-01 ,
+        ex:bhi-02 ,
+        ex:bhi-03 ;
+.
+
+ex:bhi-01
+    a bore:BoreholeInterval ;
+    geo:hasGeometry [
+        geo:asWKT "LINESTRING (...)"^^geo:wktLiteral
+    ] ;
+.
+""" ;
+    schema:alternateName "Wellbore Interval" ;
+    schema:description "A segment of a Borehole, usually started and terminated by changes in direction or of the material drilled" ;
+    schema:name "Borehole Interval" ;
+.
+
+<https://linked.data.gov.au/org/gswa>
+    a schema:Organization ;
+    schema:name "Geological Survey of Western Australia" ;
+    schema:url "https://www.dmp.wa.gov.au/Geological-Survey/Geological-Survey-262.aspx" ;
+.
+
+<https://orcid.org/0000-0002-3884-3420>
+    a schema:Person ;
+    schema:affiliation <https://kurrawong.ai> ;
+    schema:email "nick@kurrawong.ai" ;
+    schema:name "Nicholas J. Car" ;
+.
+
+bore:Bore
+    a owl:Class ;
+    skos:example """
+ex:b-01
+    a bore:Bore ;
+    bore:hadDrillingMethod <https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-jet> ;
+    bore:hasOriginPosition [
+        geo:asWKT "POINT (153.083340 -27.325458)"^^geo:wktLiteral ;
+    ] ;
+    bore:hasOriginSetting bsps:natural-ground-surface ;
+    prov:wasAttributedTo [
+        prov:agent <https://orcid.org/0000-0002-8742-7730> ;
+        dcat:hadRole ex:driller ;
+    ] ;
+    bore:hasPurpose <https://linked.data.gov.au/def/borehole-purpose/oil-shale> ;
+    bore:hasStatus <https://linked.data.gov.au/def/borehole-status/operational> ;
+    hasVerticalReference <https://linked.data.gov.au/def/vertical-depth-reference-systems/lat> ;
+    # other predicates such as links to Bores
+.
+""" ;
+    skos:historyNote "This definition for a Bore is derived from of GeoSciML's definition for Borehole, however it is altered to cater for multi-shaft Bores/Wells. This is achieved by making Bore a container class for one of more Borehole objects which represent the individual shafts." ;
+    skos:scopeNote "Expected predicates for this class are: has origin position, has part - for linking to Borehole objects), was attributed to - for linking to Agent objects, via Attribution objects, classification predicates, e.g. has purpose" ;
+    schema:alternateName
+        "Drillhole" ,
+        "Well" ;
+    schema:description "A bore is one or more boreholes which are narrow shafts, bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, other liquids (such as petroleum) or gases (such as natural gas), as part of a geotechnical investigation, environmental site assessment, mineral exploration, temperature measurement, as a pilot hole for installing piers or underground utilities, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage." ;
+    schema:name "Bore" ;
+.
