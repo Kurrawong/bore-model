@@ -4,7 +4,7 @@ from pylode.profiles.ontpub import OntPub
 REPO_DIR = Path(__file__).parent.parent.resolve()
 
 # initialise
-od = OntPub(ontology=REPO_DIR / "bore.ttl")
+od = OntPub(ontology=REPO_DIR / "model.ttl")
 
 # make HTML
 html = od.make_html()
@@ -30,4 +30,4 @@ concepts_img = f'''<div id="content">
 html = html.replace('<div id="content">', concepts_img)
 
 # write HTML to file
-open(REPO_DIR / "bore.html", "w").write(html)
+open(REPO_DIR / "model.html", "w").write(html)

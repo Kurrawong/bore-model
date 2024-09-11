@@ -4,11 +4,16 @@
 
 A model that describes physical, functional and operational aspects of Bores, sometimes known as Wells.
 
-Online at: <https://github.com/kurrawong/bore-model>
+Code Repository at: <https://github.com/kurrawong/bore-model>
+
+Published Online at: 
+
+* <https://linked.data.gov.au/def/bore>
+
 
 ## Contacts
 
-* Nicholas Car <nick@kurrawong.ai>  
+ * Nicholas Car <nick@kurrawong.ai>
 
 
 ## License & Rights

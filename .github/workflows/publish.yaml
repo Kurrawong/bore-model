@@ -1,0 +1,32 @@
+name: Auto-publish
+
+on:
+  push:
+      branches:
+          - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout
+
+    - name: Deploy
+      working-directory: ./
+      run: |
+        mkdir doc
+        echo "Add README to doc/"
+        asciidoctor README.adoc -o doc/index.html
+        echo "Add model to doc/"
+        asciidoctor document/0-master.adoc -o doc/doc.html           
+        # echo "Add images to doc/"
+        # cp -r document/images doc/
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+         BRANCH: gh-pages
+         FOLDER: doc
