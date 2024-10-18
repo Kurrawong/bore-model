@@ -14,8 +14,8 @@ ont:
     owl:versionInfo "1.0 - Initial version" ;
     schema:codeRepository <https://github.com/kurrawong/bore-model> ;
     schema:creator <https://orcid.org/0000-0002-3884-3420> ;
-    schema:dateCreated "2020-11-11"^^xsd:date ;
-    schema:dateModified "2020-11-11"^^xsd:date ;
+    schema:dateCreated "2024-01-15"^^xsd:date ;
+    schema:dateModified "2024-09-05"^^xsd:date ;
     schema:description "A model that describes physical, functional and operational aspects of Bores, sometimes known as Wells." ;
     schema:name "Bore Model" ;
     schema:primaryImageOfPage "overview.png" ;
